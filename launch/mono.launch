@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="config" default="$(find orb_slam_ros)/config/example.yaml" />
+
+  <node name="orb_slam_mono" pkg="orb_slam_ros" type="mono" output="screen">
+    <param name="~vocab_file" value="$(find orb_slam)/Vocabulary/ORBvoc.txt" />
+    <param name="~settings_file" value="$(arg config)" />
+    <param name="~use_pangolin_viewer" value="true" />
+    <param name="~odom_frame" value="odom" />
+    <param name="~camera_frame" value="camera_optical" />
+    <param name="~world_frame" value="orb_slam" />
+  </node>
+</launch>
